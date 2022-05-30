@@ -1,6 +1,14 @@
-import React from "react";
-
+import React,{ useState}from "react";
+import AddProduct from "./AddProduct";
+import Pagination from "./Pagination";
+ import Product from './Product'
+ import taskdata from "..db.json"
+ 
 const Products = () => {
+ 
+  const [task,setTask] =useState(taskdata)
+ 
+console.log(taskdata)
   // TODO: Remove below const and instead import them from chakra
   const Flex = () => <div />;
   const Grid = () => <div />;
@@ -8,8 +16,12 @@ const Products = () => {
   return (
     <Flex>
       {/*  AddProduct */}
-      <Grid>{/* List of Products */}</Grid>
+      <AddProduct />
+      <Grid>{/* List of Products */}
+       <Product />
+      </Grid>
       {/* Pagination */}
+      <Pagination />
     </Flex>
   );
 };
